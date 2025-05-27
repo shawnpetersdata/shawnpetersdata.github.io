@@ -1,0 +1,284 @@
+/* General Styles */
+body {
+    font-family: 'Raleway', sans-serif;
+    margin: 0;
+    padding: 0;
+    background: #023E7D; /* Deep Ocean Blue */
+    color: #C0C5C1; /* Soft Gray */
+    scroll-behavior: smooth;
+}
+
+/* Full Page Sections */
+.hero, .content {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+/* Content Section (For Contact & Other Full-Height Pages) */
+.content {
+    height: 100vh; /* Full viewport height */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 0 20px; /* Reduce large padding that might cause overflow */
+    box-sizing: border-box; /* Prevents padding from affecting height */
+    overflow: hidden; /* Ensures no extra content spills out */
+}
+
+/* Ensure Contact Headings & Text Fit */
+.content h1 {
+    font-size: 6rem;
+    font-weight: 600;
+    color: #FFCC00; /* Golden Yellow */
+    margin: 10px 0; /* Avoid excessive margin */
+}
+
+.content h2 {
+    font-size: 3rem;
+    font-weight: 300;
+    color: #E3B505; /* Gold Accent */
+    margin: 10px 0; /* Reduce margin */
+}
+
+.content p {
+    font-size: 1.4rem;
+    line-height: 1.6;
+    max-width: 700px;
+    margin: 10px 0; /* Prevent excess spacing */
+}
+
+/* Hero Section */
+.hero {
+    color: #FFCC00; /* Golden Yellow */
+}
+
+.hero h1 {
+    font-size: 8rem;
+    font-weight: 600;
+    margin: 0;
+}
+
+.hero h2 {
+    font-size: 3rem;
+    font-weight: 200;
+    margin: 0;
+}
+
+/* Works & Contact Sections */
+#works, #contact {
+    color: #C0C5C1;
+}
+
+#works h1, #contact h1 {
+    font-size: 6rem;
+    font-weight: 600;
+    color: #FFCC00; /* Golden Yellow */
+    margin-bottom: 20px;
+}
+
+#works p, #contact p {
+    font-size: 1.4rem;
+    line-height: 1.6;
+    max-width: 700px;
+}
+
+/* Fixed Corner Navigation */
+.corner {
+    position: fixed;
+    font-size: 1.2rem;
+    color: #E3B505; /* Gold Accent */
+    text-decoration: none;
+    font-weight: 300;
+    padding: 10px 15px;
+    background-color: rgba(2, 62, 125, 0.6); /* Deep Ocean Blue with 60% opacity */
+    border-radius: 5px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.corner:hover {
+    background-color: rgba(2, 62, 125, 0.9); /* Darker on hover */
+    text-decoration: underline;
+}
+
+.top-left { top: 20px; left: 20px; }
+.top-right { top: 20px; right: 20px; }
+.bottom-left { bottom: 20px; left: 20px; }
+.bottom-right { bottom: 20px; right: 20px; }
+
+/* Social Links */
+.social-links {
+    margin-top: 20px;
+}
+
+.social-links a {
+    color: #FFCC00; /* Golden Accent */
+    text-decoration: none;
+    margin: 0 10px;
+    font-weight: 400;
+    font-size: 1.2rem;
+}
+
+.social-links a:hover {
+    text-decoration: underline;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 20px;
+    background: #023E7D; /* Deep Ocean Blue */
+    color: #FFCC00; /* Golden Accent */
+    font-size: 1rem;
+}
+
+/* ============================= */
+/* Masonry Grid for Works Section */
+/* ============================= */
+
+/* Works Section */
+#works {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start; /* Align grid at the top */
+    height: auto; 
+    min-height: 100vh;/* Full viewport height */
+    padding: 60px 40px;
+    text-align: center;
+    background: #023E7D; /* Deep Ocean Blue */
+    color: #FFCC00; /* Golden Yellow */
+    box-sizing: border-box;
+    overflow: hidden;
+}
+
+/* Works Title */
+#works h1 {
+    font-size: 6rem;
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+
+/* Masonry Grid Using Columns */
+.gallery {
+    column-count: 3; /* Adjust column count for different screen sizes */
+    column-gap: 20px; /* Space between columns */
+    max-width: 1200px;
+    width: 100%;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+/* Ensure Images Stack Naturally */
+.gallery img {
+    width: 100%;
+    display: block; /* Ensures images don't inline-wrap */
+    margin-bottom: 20px; /* Creates space between stacked images */
+    border-radius: 10px;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+/* Hover Effect */
+.gallery img:hover {
+    transform: scale(1.05);
+    opacity: 0.9;
+}
+
+/* Artwork Modal */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.9); /* Slight transparency */
+    align-items: center;
+    justify-content: center;
+    padding: 40px;
+    box-sizing: border-box;
+}
+
+/* Modal Content - Ensures Text is in a Small Strip */
+.modal-content {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    max-width: 85%;
+    max-height: 90%;
+    gap: 30px; /* Space between text and image */
+    position: relative; /* Allows absolute positioning inside */
+}
+
+/* Close Button - Ensure Visibility */
+.close {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    color: black;
+    font-size: 40px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+/* Text Container - Small Vertical Strip */
+.text-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Pushes description to top & metadata to bottom */
+    align-items: flex-start;
+    width: 18%; /* Restrict text to a small strip */
+    max-width: 250px; /* Prevents text from being too wide */
+    height: 100%;
+    padding-right: 20px;
+    box-sizing: border-box;
+}
+
+/* Description (Top Aligned) */
+.description {
+    color: black;
+    font-size: clamp(0.8rem, 1.8vw, 1.3rem); /* Responsive font size */
+    text-align: left;
+    align-self: flex-start;
+}
+
+/* Metadata (Bottom Aligned) */
+.metadata {
+    color: black;
+    font-size: clamp(0.7rem, 1.6vw, 1.1rem); /* Responsive font size */
+    text-align: left;
+}
+
+/* Artwork Image - Slightly Shifted Right */
+.modal-content img {
+    max-width: 75%; /* Increase image width slightly */
+    max-height: 85vh;
+    border-radius: 5px;
+}
+
+/* Navigation Buttons */
+.prev, .next {
+    position: absolute;
+    top: 50%;
+    background: none;
+    border: none;
+    color: red; /* Red arrows */
+    font-size: 50px;
+    cursor: pointer;
+    padding: 10px;
+    transform: translateY(-50%);
+}
+
+/* Move arrows slightly outward */
+.prev { left: 20px; } 
+.next { right: 20px; }
+
+
+
+
