@@ -248,6 +248,13 @@ footer {
     align-self: flex-start;
 }
 
+#art-title {
+    font-size: clamp(1rem, 2vw, 1.5rem);
+    font-weight: 600;
+    color: black;
+    margin-bottom: 10px;
+}
+
 /* Metadata (Bottom Aligned) */
 .metadata {
     color: black;
